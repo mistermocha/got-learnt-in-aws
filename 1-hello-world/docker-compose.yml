@@ -1,0 +1,13 @@
+services:
+  helloworld:
+    image: just-a-flask:latest 
+    command: /bin/sh -c 'flask run'
+    expose:
+      - 5050
+    ports:
+      - 5050:5050
+    working_dir: /code
+    environment:
+      FLASK_APP: helloworld.py
+      FLASK_RUN_PORT: 5050
+      FLASK_RUN_HOST: 0.0.0.0
